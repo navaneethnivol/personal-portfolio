@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 const navItems = {
@@ -11,9 +12,9 @@ const navItems = {
     // '/blog': {
     //     name: 'blog',
     // },
-    '/guestbook': {
-        name: 'guestbook',
-    },
+    // '/guestbook': {
+    //     name: 'guestbook',
+    // },
 };
 
 
@@ -29,13 +30,9 @@ function Navigation() {
                     <div className="flex flex-row space-x-0 pr-10">
                         {Object.entries(navItems).map(([path, { name }]) => {
                             return (
-                                <a
-                                    key={path}
-                                    href={path}
-                                    className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2"
-                                >
+                                <Link key={path} to={path} className="transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle relative py-1 px-2" >
                                     {name}
-                                </a>
+                                </Link>
                             );
                         })}
                     </div>
